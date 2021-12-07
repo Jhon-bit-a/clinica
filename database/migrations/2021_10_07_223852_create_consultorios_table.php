@@ -14,11 +14,11 @@ class CreateConsultoriosTable extends Migration
     public function up()
     {
         Schema::create('consultorios', function (Blueprint $table) {
-            $table->id('id_consultorio');
+            $table->id('id');
             $table->unsignedBigInteger('id_enfermeria');
             $table->unsignedBigInteger('id_historial');
-            $table->foreign('id_enfermeria')->references('id_enfermeria')->on('enfermerias');
-            $table->foreign('id_historial')->references('id_historial')->on('historiales');
+            $table->foreign('id_enfermeria')->references('id')->on('enfermerias');
+            $table->foreign('id_historial')->references('id')->on('historiales');
             $table->string('n_consultorio');
             $table->string('estado');
 

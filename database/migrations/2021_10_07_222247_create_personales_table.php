@@ -14,15 +14,15 @@ class CreatePersonalesTable extends Migration
     public function up()
     {
         Schema::create('personales', function (Blueprint $table) {
-            $table->id('id_personal');
+            $table->id('id');
             $table->unsignedBigInteger('id_cargo');
-            $table->string('nombre');
+            $table->string('nombre_personal');
             $table->string('apellidos');
             $table->string('direccion');
             $table->date('fecha_nac');
             $table->string('genero');
             $table->string('estado');
-            $table->foreign('id_cargo')->references('id_cargo')->on('cargos');   
+            $table->foreign('id_cargo')->references('id')->on('cargos');
             $table->timestamps();
         });
     }

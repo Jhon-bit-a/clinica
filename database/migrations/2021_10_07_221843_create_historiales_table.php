@@ -14,7 +14,7 @@ class CreateHistorialesTable extends Migration
     public function up()
     {
         Schema::create('historiales', function (Blueprint $table) {
-            $table->id('id_historial');
+            $table->id('id');
             $table->date('fecha');
             $table->string('diagnostico');
             $table->string('tratamiento');
