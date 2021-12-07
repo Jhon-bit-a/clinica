@@ -11,7 +11,7 @@
 
                 <div class="max-w-lg mx-auto">
 
-                    <form action="{{route('clientes.update', $cliente)}}" method="POST">
+                    <form action="{{route('cliente.update', $cliente)}}" method="POST">
                         @csrf @method('PUT')
 
                         <div class="mb-6">
@@ -22,8 +22,8 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">apellido:</label>
-                            <input value=" {{old('apellido'), $cliente->apellido}} " type="text" id="apellido" name="apellido"
+                            <label for="apellidos" class="text-sm font-medium text-gray-900 block mb-2">apellido:</label>
+                            <input value=" {{old('apellidos'), $cliente->apellidos}} " type="text" id="apellidos" name="apellidos"
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
                             focus:border-blue-500 block w-full p-2.5"  required="">
                         </div>

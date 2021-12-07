@@ -9,7 +9,7 @@ class ClienteController extends Controller
 {
     public function index(){
         $clientes = cliente::all();
-        $clientes =Cliente::orderBy('id', 'desc') ->paginate();
+      //  $clientes =Cliente::orderBy('id', 'desc') ->paginate();
         return view('clientes.index', compact('cliente'));
     }
     public function create(){
@@ -35,8 +35,8 @@ $request ->validate([
         $cliente->apellidos  =$request -> apellidos;
         $cliente->cedula  =$request -> cedula;
         $cliente->save();
-        return view('clientes.index', compact('cliente'));
-        //return redirect() ->route('cliente.show', $cliente);
+        //return view('clientes.index', compact('cliente'));
+        return redirect() ->route('cliente.show', $cliente);
     }
     public function show(Cliente $cliente){
 
@@ -78,4 +78,5 @@ $request ->validate([
     $cliente = Cliente::all();
     return redirect()->route('clientes.index', compact('clientes'))->with('status', 'Cliente eliminado');
 
-}}
+}
+}

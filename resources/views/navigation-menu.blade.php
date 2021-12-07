@@ -15,35 +15,32 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
-                        Clientes
+                    <x-jet-nav-link href="{{ route('cargo.index') }}" :active="request()->routeIs('cargo.*')">
+                        Cargo
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('cargos.index') }}" :active="request()->routeIs('cargos.*')">
-                        Cargos
+                    <x-jet-nav-link href="{{ route('paciente.index') }}" :active="request()->routeIs('paciente.*')">
+                        Paciente
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('pacientes.index') }}" :active="request()->routeIs('pacientes.*')">
-                        Pacientes
+                    <x-jet-nav-link href="{{ route('servicio.index') }}" :active="request()->routeIs('servicio.*')">
+                        Servicio
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('servicios.index') }}" :active="request()->routeIs('servicios.*')">
-                        Servicios
+                    <x-jet-nav-link href="{{ route('historial.index') }}" :active="request()->routeIs('historial.*')">
+                        Historial
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('historiales.index') }}" :active="request()->routeIs('historiales.*')">
-                        Historiales
+                    <x-jet-nav-link href="{{ route('receta.index') }}" :active="request()->routeIs('receta.*')">
+                        Receta
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('resetas.index') }}" :active="request()->routeIs('resetas.*')">
-                        Resetas
+                    <x-jet-nav-link href="{{ route('personal.index') }}" :active="request()->routeIs('personal.*')">
+                        Personal
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('personales.index') }}" :active="request()->routeIs('personales.*')">
-                        Personales
+                    <x-jet-nav-link href="{{ route('detalle.index') }}" :active="request()->routeIs('detalle.*')">
+                        Detalle
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('detalles.index') }}" :active="request()->routeIs('detalles.*')">
-                        Detalles
+                    <x-jet-nav-link href="{{ route('enfermeria.index') }}" :active="request()->routeIs('enfermeria.*')">
+                        Enfermeria
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('enfermerias.index') }}" :active="request()->routeIs('enfermerias.*')">
-                        Enfermerias
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('consultorios.index') }}" :active="request()->routeIs('consultorios.*')">
-                        Consultorios
+                    <x-jet-nav-link href="{{ route('consultorio.index') }}" :active="request()->routeIs('consultorio.*')">
+                        Consultorio
                     </x-jet-nav-link>
 
                 </div>
@@ -57,7 +54,7 @@
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
-                                        {{ Auth::clientes()->currentTeam->name }}
+                                        {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -74,7 +71,7 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::clientes()->currentTeam->id) }}">
+                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
                                     </x-jet-dropdown-link>
 
@@ -91,7 +88,7 @@
                                         {{ __('Switch Teams') }}
                                     </div>
 
-                                    @foreach (Auth::clientes()->allTeams() as $team)
+                                    @foreach (Auth::user()->allTeams() as $team)
                                         <x-jet-switchable-team :team="$team" />
                                     @endforeach
                                 </div>
@@ -106,12 +103,12 @@
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::clientes()->profile_photo_url }}" alt="{{ Auth::clientes()->name }}" />
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                        {{ Auth::clientes()->name }}
+                                        {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -179,13 +176,13 @@
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="flex-shrink-0 mr-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::clientes()->profile_photo_url }}" alt="{{ Auth::clientes()->name }}" />
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::clientes()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::clientes()->email }}</div>
+                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
@@ -221,7 +218,7 @@
                     </div>
 
                     <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::clientes()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
                         {{ __('Team Settings') }}
                     </x-jet-responsive-nav-link>
 
@@ -238,7 +235,7 @@
                         {{ __('Switch Teams') }}
                     </div>
 
-                    @foreach (Auth::clientes()->allTeams() as $team)
+                    @foreach (Auth::user()->allTeams() as $team)
                         <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
                     @endforeach
                 @endif

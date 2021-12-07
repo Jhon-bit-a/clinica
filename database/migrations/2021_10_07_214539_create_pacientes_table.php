@@ -14,7 +14,7 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->id('id_paciente');
+            $table->id('id');
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('direccion');

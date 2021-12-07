@@ -11,7 +11,7 @@
 
                 <div class="max-w-lg mx-auto">
 
-                    <form action="{{route('clientes.store')}}" method="POST">
+                    <form action="{{route('cliente.store')}}" method="POST">
                         @csrf
                         <div class="mb-6">
                             <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre:</label>
@@ -37,12 +37,12 @@
 
 
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">Apellido:</label>
-                            <input type="text" id="apellido" name="apellido"
+                            <label for="apellidos" class="text-sm font-medium text-gray-900 block mb-2">Apellido:</label>
+                            <input type="text" id="apellidos" name="apellidos"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese el apellido" value=" {{old('apellido')}} ">
+                                placeholder="Ingrese el apellido" value=" {{old('apellidos')}} ">
                         </div>
-                        @error('apellido')
+                        @error('apellidos')
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                             role="alert">
                             <span class="block sm:inline">{{$message}}</span>
@@ -83,7 +83,7 @@
                         @enderror
 
 
-                        
+
                         <button
                             class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Guardar</button>
                     </form>

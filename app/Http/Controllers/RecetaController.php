@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ResetaController extends Controller
+class RecetaController extends Controller
 {
     public function index(){
-        return view('resetas.index');
+        return view('recetas.index');
 
     }
     public function create(){
-        return view('resetas.create');
+        return view('recetas.create');
 
     }
     public function show($reseta){
-        return view('resetas.show',['reseta'=>$reseta]);
+        return view('recetas.show',['receta'=>$reseta]);
 
     }
 }
