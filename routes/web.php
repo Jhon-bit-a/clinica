@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route; //route
 use App\Http\Controllers\HomeController; //home
 use App\Http\Controllers\CargoController; //cargo
 use App\Http\Controllers\PacienteController; //paciente
-use App\Http\Controllers\ServicioController; //servicios
+use App\Http\Controllers\ServiciosController; //servicios
 use App\Http\Controllers\HistorialController; //hisotial
 use App\Http\Controllers\RecetaController; //Receta
 use App\Http\Controllers\PersonalController; //Personal
@@ -43,7 +43,7 @@ Route::resource('cargo', CargoController::class);
 //paciente
 Route::resource('paciente', PacienteController::class);
 //servicios
-Route::resource('servicio', ServicioController::class);
+Route::resource('servicio', ServiciosController::class);
 //historial
 Route::resource('historial', HistorialController::class);
 //receta

@@ -14,11 +14,11 @@ class CreateEnfermeriasTable extends Migration
     public function up()
     {
         Schema::create('enfermerias', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('id_historial');
-            $table->unsignedBigInteger('id_personal');
-            $table->foreign('id_historial')->references('id')->on('historiales');
-            $table->foreign('id_personal')->references('id')->on('personales');
+            $table->bigIncrements('idenfermeria');
+            $table->unsignedBigInteger('idhistorial');
+            $table->unsignedBigInteger('idpersonal');
+            $table->foreign('idhistorial')->references('idhistorial')->on('historials');
+            $table->foreign('idpersonal')->references('idpersonal')->on('personales');
             $table->string('presion');
             $table->string('talla');
             $table->string('peso');

@@ -52,12 +52,14 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
                             focus:border-blue-500 block w-full p-2.5"  required="">
                         </div>
+                        
+                        <div class="flex items-center mb-5">
 
-                        <div class="mb-6">
-                            <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">estado:</label>
-                            <input value=" {{old('estado', $cargo->estado)}} " type="text" id="estado" name="estado"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5"  required="">
+                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
+                            </select>
                         </div>
 
 <a href="{{ route('cargo.index') }}"

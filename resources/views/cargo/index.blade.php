@@ -21,6 +21,7 @@
                                     <tr
                                         class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase
             border-b border-gray-600">
+                                        <th class="px-4 py-3">idcargo</th>
                                         <th class="px-4 py-3">Nombre</th>
                                         <th class="px-4 py-3">Usuario</th>
                                         <th class="px-4 py-3">Clave</th>
@@ -32,20 +33,30 @@
                                 <tbody class="bg-white">
                                     @foreach ($cargo as $cargo)
                                         <tr class="text-gray-700">
-
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cargo->idcargo }}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $cargo->nombre }}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $cargo->usuario }}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $cargo->clave }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $cargo->estado }}</td>
+
+                                            @if($cargo->estado == 'activo')
+                                            <td class="px-4 py-3 text-xs border">
+                                              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$cargo->estado}} </span>
+                                            </td>
+                                          @else
+                                            <td class="px-4 py-3 text-xs border">
+                                              <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$cargo->estado}} </span>
+                                            </td>
+                                          @endif
+
                                             <td class="px-4 py-3 text-ms font-semibold border">
                                                 <div>
                                                     <a class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
-                                                    href="{{route('cargo.show', $cargo->id)}}">
+                                                    href="{{route('cargo.show', $cargo->idcargo)}}">
                                                         Editar
                                                     </a>
                                                 </div>
 
-                                                <form action="{{ route('cargo.destroy', $cargo) }}" method="POST">
+                                                <form action="{{ route('cargo.destroy', $cargo->idcargo) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button
                                                         class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">

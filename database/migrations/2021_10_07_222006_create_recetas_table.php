@@ -14,13 +14,13 @@ class CreateRecetasTable extends Migration
     public function up()
     {
         Schema::create('recetas', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('id_historial');
-            $table->integer('cantidad');
-            $table->string('nombre_recetas');
+            $table->bigIncrements('idreceta');
+            $table->unsignedBigInteger('idhistorial');
+            $table->string('cantidad');
+            $table->string('nombre_receta');
             $table->string('detalle');
             $table->string('estado');
-            $table->foreign('id_historial')->references('id')->on('historiales');
+            $table->foreign('idhistorial')->references('idhistorial')->on('historials');
             $table->timestamps();
         });
     }

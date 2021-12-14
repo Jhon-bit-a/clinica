@@ -14,5 +14,5 @@ class Cargo extends Model
         'clave',
         'estado'
     ];
-
+    protected $primaryKey ='idcargo';
 }

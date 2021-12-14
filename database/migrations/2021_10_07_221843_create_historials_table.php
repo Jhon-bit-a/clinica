@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistorialesTable extends Migration
+class CreateHistorialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateHistorialesTable extends Migration
      */
     public function up()
     {
-        Schema::create('historiales', function (Blueprint $table) {
-            $table->id('id');
-            $table->date('fecha');
+        Schema::create('historials', function (Blueprint $table) {
+            $table->bigIncrements('idhistorial');
+            $table->date('fechahistorial');
             $table->string('diagnostico');
             $table->string('tratamiento');
             $table->string('estado');
@@ -30,6 +30,6 @@ class CreateHistorialesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historiales');
+        Schema::dropIfExists('historials');
     }
 }

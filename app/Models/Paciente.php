@@ -16,4 +16,5 @@ class Paciente extends Model
         'genero',
         'estado'
     ];
+    protected $primaryKey ='idpaciente';
 }

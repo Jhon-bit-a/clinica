@@ -52,7 +52,6 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
                             focus:border-blue-500 block w-full p-2.5"  required="">
                         </div>
-
                         <div class="mb-6">
                             <label for="fecha_nacimiento" class="text-sm font-medium text-gray-900 block mb-2">fecha_nacimiento:</label>
                             <input value=" {{old('fecha_nacimiento', $paciente->fecha_nacimiento)}} " type="date" id="fecha_nacimiento" name="fecha_nacimiento"
@@ -60,18 +59,22 @@
                             focus:border-blue-500 block w-full p-2.5"  required="">
                         </div>
 
-                        <div class="mb-6">
-                            <label for="genero" class="text-sm font-medium text-gray-900 block mb-2">genero:</label>
-                            <input value=" {{old('genero', $paciente->genero)}} " type="text" id="genero" name="genero"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5"  required="">
+                        <div class="flex items-center mb-5">
+
+                            <select name="genero" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+
+                                    <option value="hombre">Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                            </select>
                         </div>
 
-                        <div class="mb-6">
-                            <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">estado:</label>
-                            <input value=" {{old('estado', $paciente->estado)}} " type="text" id="estado" name="estado"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5"  required="">
+                        <div class="flex items-center mb-5">
+
+                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
+                            </select>
                         </div>
 
 <a href="{{ route('paciente.index') }}"

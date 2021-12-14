@@ -40,16 +40,26 @@
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $paciente->direccion }}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $paciente->fecha_nacimiento }}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{ $paciente->genero }}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{ $paciente->estado }}</td>
+
+                                            @if($paciente->estado == 'activo')
+                                            <td class="px-4 py-3 text-xs border">
+                                              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$paciente->estado}} </span>
+                                            </td>
+                                          @else
+                                            <td class="px-4 py-3 text-xs border">
+                                              <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$paciente->estado}} </span>
+                                            </td>
+                                          @endif
+
                                             <td class="px-4 py-3 text-ms font-semibold border">
                                                 <div>
                                                     <a class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
-                                                    href="{{route('paciente.show', $paciente->id)}}">
+                                                    href="{{route('paciente.show', $paciente->idpaciente)}}">
                                                         Editar
                                                     </a>
                                                 </div>
 
-                                                <form action="{{ route('paciente.destroy', $paciente) }}" method="POST">
+                                                <form action="{{ route('paciente.destroy', $paciente->idpaciente) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button
                                                         class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">

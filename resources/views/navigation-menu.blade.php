@@ -15,36 +15,57 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('cargo.index') }}" :active="request()->routeIs('cargo.*')">
-                        Cargo
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('paciente.index') }}" :active="request()->routeIs('paciente.*')">
-                        Paciente
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('servicio.index') }}" :active="request()->routeIs('servicio.*')">
-                        Servicio
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('historial.index') }}" :active="request()->routeIs('historial.*')">
-                        Historial
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('receta.index') }}" :active="request()->routeIs('receta.*')">
-                        Receta
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('personal.index') }}" :active="request()->routeIs('personal.*')">
-                        Personal
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('detalle.index') }}" :active="request()->routeIs('detalle.*')">
-                        Detalle
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('enfermeria.index') }}" :active="request()->routeIs('enfermeria.*')">
-                        Enfermeria
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('consultorio.index') }}" :active="request()->routeIs('consultorio.*')">
-                        Consultorio
-                    </x-jet-nav-link>
-
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('cargo.index') }}" :active="request()->routeIs('cargo.*')">
+                        {{ __('cargo') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('paciente.index') }}" :active="request()->routeIs('paciente.*')">
+                        {{ __('paciente') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('servicio.index') }}" :active="request()->routeIs('servicio.*')">
+                        {{ __('servicio') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('historial.index') }}" :active="request()->routeIs('historial.*')">
+                        {{ __('historial') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('receta.index') }}" :active="request()->routeIs('receta.*')">
+                        {{ __('receta') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('personal.index') }}" :active="request()->routeIs('personal.*')">
+                        {{ __('personal') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('enfermeria.index') }}" :active="request()->routeIs('enfermeria.*')">
+                        {{ __('enfermeria') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('consultorio.index') }}" :active="request()->routeIs('consultorio.*')">
+                        {{ __('consultorio') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('detalle.index') }}" :active="request()->routeIs('detalle.*')">
+                        {{ __('detalle') }}
+                    </x-jet-nav-link>
+                </div>
+
             </div>
+
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->

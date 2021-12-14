@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Personale extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombres',
+        'apellidos',
+        'direccion',
+        'fecha_nacimiento',
+        'genero',
+        'estado',
+        'idcargo'
+    ];
+    protected $primaryKey = 'idpersonal';
 }
